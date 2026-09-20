@@ -1,0 +1,6 @@
+service:
+  name: service_kubernetes_2a02
+  identifier: service_kubernetes_2a02
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
