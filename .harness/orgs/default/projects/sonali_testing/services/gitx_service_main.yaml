@@ -1,0 +1,19 @@
+service:
+  name: gitx_service_main
+  identifier: gitx_service_main
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: m1
+            spec:
+              store:
+                spec:
+                  extractionScript: <+input>
+                  filePath: test.yaml
+                type: CustomRemote
+              optionalValuesYaml: false
+              enableDeclarativeRollback: false
+              skipResourceVersioning: false
+            type: K8sManifest
