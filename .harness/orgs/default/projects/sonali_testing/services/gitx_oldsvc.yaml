@@ -1,0 +1,24 @@
+service:
+  name: gitx_oldsvc
+  identifier: gitx_oldsvc
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: m1
+            type: K8sManifest
+            spec:
+              store:
+                type: CustomRemote
+                spec:
+                  filePath: dfg
+                  extractionScript: <+input>
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              valuesPaths:
+                - fd
+              optionalValuesYaml: false
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: sonali_testing
