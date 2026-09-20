@@ -4,21 +4,7 @@ pipeline:
       id: Deploy_Kubernetes_ba0b
       service:
         type: kubernetes
-        items:
-          - id: gitx_service_main
-            with:
-              overlay:
-                type: Kubernetes
-                spec:
-                  manifests:
-                    - manifest:
-                        identifier: m1
-                        type: K8sManifest
-                        spec:
-                          store:
-                            type: CustomRemote
-                            spec:
-                              extractionScript: <+input>
+        items: <+input>
       environment:
         items: <+input>
       runtime: delegate
