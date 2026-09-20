@@ -3,4 +3,14 @@ service:
   identifier: service_kubernetes_2a02
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      artifacts:
+        primary:
+          sources:
+            - type: DockerRegistry
+              identifier: a1
+              spec:
+                connectorRef: org.CDS_130780_test
+                imagePath: library/nginx
+                tag: <+input>
+          primaryArtifactRef: <+input>
