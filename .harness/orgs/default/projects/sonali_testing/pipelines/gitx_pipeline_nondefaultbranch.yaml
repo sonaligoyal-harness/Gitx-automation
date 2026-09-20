@@ -1,0 +1,19 @@
+pipeline:
+  stages:
+    - name: Deploy Kubernetes_35cd
+      id: Deploy_Kubernetes_35cd
+      service:
+        type: kubernetes
+        items: <+input>
+      environment:
+        items: <+input>
+      runtime: delegate
+      on-failure:
+        - errors:
+            - all
+          action: stage-rollback
+      steps:
+        - name: step1
+          run:
+            script: echo 'hello'
+          id: step1
