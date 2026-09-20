@@ -4,7 +4,17 @@ pipeline:
       id: Deploy_Kubernetes_ba0b
       service:
         type: kubernetes
-        items: <+input>
+        items:
+          - id: service_kubernetes_2a02
+            with:
+              overlay:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+            ref: 19Apr
       environment:
         items: <+input>
       runtime: delegate
