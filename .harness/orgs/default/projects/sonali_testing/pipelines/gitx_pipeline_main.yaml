@@ -14,7 +14,7 @@ pipeline:
                     primary:
                       primaryArtifactRef: <+input>
                       sources: <+input>
-            ref: 19Apr
+            gitBranch: 19Apr
       environment:
         items: <+input>
       runtime: delegate
